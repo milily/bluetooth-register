@@ -1,4 +1,4 @@
-var registro : [
+var registro = [
 	{
 		origen: "b8:27:eb:b8:ab:8e",
 		mac: "94:65:9C:86:17:F7",
