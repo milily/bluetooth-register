@@ -1,5 +1,6 @@
-$('#fecha').datetimepicker({
+/*$(document).ready(function(){
+	$('#divMiCalendario').datetimepicker({
           format: 'YYYY-MM-DD HH:mm'       
       });
-
-$('#fecha').data("DateTimePicker").show();
+	$('#divMiCalendario').data("DateTimePicker").show();
+}); */

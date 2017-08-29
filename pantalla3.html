@@ -9,7 +9,9 @@
     <!-- Compiled and minified FontAwesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- Compiled and minified Datetimepicker -->
   <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"> 
+  
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
@@ -30,7 +32,7 @@
 				<div class="row">
           <div class="col-md-6 col-md-offset-3">
               <form class="form-horizontal" action="" method="post">
-                  <div class='input-group date' id='fecha'>
+                  <div class='input-group date' id='divMiCalendario'>
                       <input type='text' id="txtFecha" class="form-control"  readonly/>
                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -52,9 +54,17 @@
 
     
 	<!-- Compiled and minified Jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+   <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+   <script src="assets/js/bootstrap-datetimepicker.es.js"></script>
+
+   <script type="text/javascript">
+     $('#divMiCalendario').datetimepicker({
+          format: 'YYYY-MM-DD HH:mm'       
+      });
+      $('#divMiCalendario').data("DateTimePicker").show();
+   </script>
 
     <script type="text/javascript" href="assets/js/main.js"></script>
 
