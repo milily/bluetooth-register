@@ -8,11 +8,11 @@
   background-position: center center;
   z-index: 1; }
   .large-header .and-btn-portada {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 10px 30px; }
 
 #large-header {
-  background-image: url("https://pbs.twimg.com/profile_background_images/188139131/Everis_Twitter_BACKGROUNDII.jpg"); }
+  background-image: url("../img/background2.jpg"); }
 
 .main-title {
   font-size: 60px;
