@@ -1,0 +1,130 @@
+/*var canvas = $("#paper")[0];
+var c = canvas.getContext("2d");
+//punto inicial x e y
+var startX = 40; 
+var startY = 300;
+//punto final x e y
+var endX = 400;
+var endY = 400;
+var amount = 0;
+setInterval(function() {
+    amount += 0.012; // cambia la duración de la linea
+    if (amount > 1) amount = 1;
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    c.strokeStyle = "#99AE04"; //color linea
+    c.moveTo(startX, startY);
+    // lerp : a  + (b - a) * f
+    c.lineTo(startX + (endX - startX) * amount, startY + (endY - startY) * amount);
+    c.stroke(); //metodo que dibuja la linea
+}, 20);
+
+var c = document.getElementById("paper");
+var contexto = c.getContext("2d");
+
+var cw = c.width = 350,
+  cx = cw / 2;
+var ch = c.height = 300,
+  cy = ch / 2;
+
+var rad = Math.PI / 180;
+
+var a = {
+  x: 50,
+  y: 50,
+  text: " A"
+}
+var b = {
+  x: 300,
+  y: 250,
+  text: " B"
+}
+
+contexto.beginPath();
+contexto.moveTo(a.x, a.y);
+contexto.lineTo(b.x, b.y);
+contexto.stroke();
+
+contexto.font = "16px Verdana";
+contexto.fillStyle = "blue";
+contexto.fillText(a.text, a.x, a.y - 5);
+contexto.fillText(b.text, b.x + 5, b.y);
+
+var m = {
+  x: ((b.x - a.x) / 2) + a.x,
+  y: ((b.y - a.y) / 2) + a.y
+}
+contexto.beginPath();
+
+contexto.strokeStyle = "red";
+var n = 10;
+for (var i = 0; i <= n; i++) {
+  var s = {
+    x: ((b.x - a.x) * i / n) + a.x,
+    y: ((b.y - a.y) * i / n) + a.y
+  }
+  contexto.beginPath();
+  contexto.arc(s.x, s.y, 3, 0, 2 * Math.PI);
+  contexto.stroke();
+}*/
+
+var CANVAS_WIDTH = window.innerWidth;
+var CANVAS_HEIGHT = window.innerHeight;
+
+var FPS = 60;
+    
+var canvas;
+var context;
+var dot;
+
+init();
+
+function init() {
+  canvas = document.getElementById('paper');
+  
+  if (canvas && canvas.getContext) {
+    context = canvas.getContext('2d');
+    canvas.width = CANVAS_WIDTH;
+    canvas.height = CANVAS_HEIGHT;
+  
+    createTrail();
+    
+    setInterval(loop, 1000 / FPS);
+  }
+}
+
+function createTrail() {
+  dot = {
+    x: 100, 
+    y: 100,
+    speed: 3,
+    direction: Math.PI * 2 * Math.random()
+  }
+}
+
+function updatePosition() {
+  var dx = dot.x + dot.speed * Math.cos(dot.direction);
+  var dy = dot.y + dot.speed * Math.sin(dot.direction);
+  
+  if (dx < 0 || dx > CANVAS_WIDTH || dy < 0 || dy > CANVAS_HEIGHT) {
+    dot.direction = Math.PI * 2 * Math.random();
+    updatePosition();
+  } else {
+    dot.x = dx;
+    dot.y = dy;
+  }
+}
+
+function loop() {
+  updatePosition();
+  
+  // Draw over the whole canvas to create the trail effect
+  context.fillStyle = 'rgba(255, 255, 255, .05)';
+  context.fillRect(1000, 1000, canvas.width, canvas.height);
+  
+  // Draw the dot
+  context.beginPath();
+  context.fillStyle = '#ff0000';
+  context.moveTo(dot.x, dot.y);
+  context.arc(dot.x, dot.y, 3, 0, Math.PI*2, true);
+  context.fill();
+}
