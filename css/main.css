@@ -40,3 +40,10 @@
     font-size: 3em; } }
 
 /*# sourceMappingURL=main.css.map */
+
+
+#paper{
+  background-image: url(../img/planta2.jpg);
+  background-size: cover;
+  background-position: center;
+}
