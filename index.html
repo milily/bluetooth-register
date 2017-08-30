@@ -1,22 +1,127 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Bluetooth-register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Compiled and minified Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Compiled and minified FontAwesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <P>hola</P>
+<canvas class="center-block" id="papers" width="500" height="700"></canvas>
 	<!-- Compiled and minified Jquery-->
-    <script
+   <!-- <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="assets/js/data.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div>
+		Time&nbsp;<div id="clock">0</div>
+	</div>
+	<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+      var canvas           = document.getElementById('myCanvas');
+      var context          = canvas.getContext('2d');
+      var x                = canvas.width / 2;
+      var y                = canvas.height / 2;
+      var radius           = 10;
+      var startAngle       = 1.1 * Math.PI;
+      var endAngle         = 1.9 * Math.PI;
+      var counterClockwise = false;
+
+      context.beginPath();
+      context.arc(x, y, radius, 0, 360, false);
+      context.lineWidth    = 4;
+
+      // line color
+      context.strokeStyle  = 'blue';
+      context.stroke();
+      var i = 1;
+
+      second = 0;
+
+      register = [
+      	{
+      		id:    1,
+      		ttl:   36,
+      		radio: 4
+      	},
+      	{
+      		id:    2,
+      		ttl:   5,
+      		radio: 9
+      	},
+      	{
+      		id:    3,
+      		ttl:   6,
+      		radio: 7
+      	},
+      	{
+      		id:    4,
+      		ttl:   3,
+      		radio: 9
+      	}
+      ];
+
+
+
+register.each
+// desde
+		var second = 0;
+		var timer = setInterval(function(){
+			second = second + 1;
+			$("#clock").text(second);
+			context.beginPath();
+			context.arc(x, y, radius, 0, 360, false);
+			context.lineWidth    = 4;
+			context.strokeStyle  = 'blue';
+			context.stroke();      	
+
+			if( second > ttl){
+				clearInterval(timer);
+			}
+
+      }, ttl * 1000);
+
+		context.beginPath();
+		context.arc(x, y, radius, 0, 360, false);
+		context.lineWidth    = 4;
+		context.strokeStyle  = 'white';
+		
+
+// hasta
+
+
+
+
+/*
+		var c   = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+
+		ctx.beginPath();
+
+		ctx.arc(100,75,50,0,2*Math.PI);
+
+		ctx.stroke();
+*/
+	</script>
+
 </body>
 </html>
