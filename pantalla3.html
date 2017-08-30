@@ -59,7 +59,7 @@
               <form class="form-horizontal" action="" method="post">
                   <div class='input-group date' id='divMiCalendario'>
                       <input type='text' id="txtFecha" class="form-control"  readonly/>
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                      <span class="input-group-addon"><span id="calendar" class="glyphicon glyphicon-calendar"></span>
                       </span>
                   </div>
               </form>
@@ -70,7 +70,8 @@
 			<div class="img-responsive col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 				<div class="row">
 					<div id="map">
-					 <canvas id="dibujo"></canvas>
+					 <canvas id="dibujo" width="500" height="300">
+</canvas>
 					</div>
 				</div>
 			</div>
@@ -88,11 +89,15 @@
      $('#divMiCalendario').datetimepicker({
           format: 'YYYY-MM-DD HH:mm'       
       });
-      $('#divMiCalendario').data("DateTimePicker").show();
+      $('#divMiCalendario').data("DateTimePicker").hide();
+      $('#calendar').click(function(){
+       $('#divMiCalendario').data("DateTimePicker").show(); 
+      })
+      
    </script>
 
-    <script type="text/javascript" href="assets/js/main.js"></script>
-    <script type="text/javascript" href="assets/js/route.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/route.js"></script>
 
 </body>
 </html>

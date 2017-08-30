@@ -2,21 +2,42 @@
 var c = canvas.getContext("2d");
 //punto inicial x e y
 var startX = 40; 
-var startY = 300;
+var startY = 30;
 //punto final x e y
-var endX = 400;
-var endY = 400;
+var endX = 100;
+var endY = 200;
 var amount = 0;
+
+
+
 setInterval(function() {
     amount += 0.012; // cambia la duración de la linea
     if (amount > 1) amount = 1;
     c.clearRect(0, 0, canvas.width, canvas.height);
+
     c.strokeStyle = "#99AE04"; //color linea
+    c.beginPath();
+    c.fillRect(endX,endY,10,10);
+    c.fillRect(startX,startY,10,10);
+    c.lineWidth = 5;
+    c.lineCap = 'round';
+  
     c.moveTo(startX, startY);
+	
+
     // lerp : a  + (b - a) * f
     c.lineTo(startX + (endX - startX) * amount, startY + (endY - startY) * amount);
+    
     c.stroke(); //metodo que dibuja la linea
 }, 20);
+
+<<<<<<< HEAD
+/*c.lineTo(startX2 + (endX2 - startX2), startY2 + (endY2 - startY2));
+var startX2 = endX;
+var startY2 = endY;
+
+var endX2 = 0;
+var endY2 = 0;
 
 var c = document.getElementById("paper");
 var contexto = c.getContext("2d");
@@ -128,21 +149,28 @@ function loop() {
   context.arc(dot.x, dot.y, 3, 0, Math.PI*2, true);
   context.fill();
 }*/
+var canvas = document.getElementById('dibujo');
+var con = canvas.getContext('2d'),
+    rad = 0,
+    linW = 0;
 
 
-
-var d = document.getElementById("dibujo");
-var lienzo = d.getContext("2d");
-
-
-dibujarLinea("red", 10, 300, 220, 10);
-
-function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal){
-  lienzo.beginPath();
-  lienzo.strokeStyle = color;
-  lienzo.moveTo(xinicial, yinicial);
-  lienzo.lineTo(xfinal, yfinal);
-  lienzo.stroke();
-  lienzo.closePath();
+function draw() {
+  con.beginPath();
+  con.arc(350, 150, rad, 0, 2 * Math.PI,false);
+  con.arc(200, 200, rad, 0, 2 * Math.PI,false);
+  con.arc(180, 130, rad, 0, 2 * Math.PI,false);
+  
+  rad++;
+  if(rad == 10) {
+      rad = 1;
+  }
+  con.clearRect(0,0,canvas.width,canvas.height);
+  console.log(rad);
+  con.lineWidth = 1;
+  con.strokeStyle = ' #99AE04';
+  con.stroke();
+  setTimeout(draw,100);
 }
+draw();
 
