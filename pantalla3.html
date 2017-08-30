@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bluetooth-register</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="img/logo-everis.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <!-- Compiled and minified FontAwesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Compiled and minified Datetimepicker -->
+  <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"> 
+  
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+  <nav class="navbar navbar-default">
+      <div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header pull-right">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <img class="logo" src="img/logo-everis.png" alt="" style="width: 150px; height: auto;">
+        </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+        <h2 class="pull-left everis_iot">Everis_IoT</h2>
+        <div class="collapse navbar-collapse nav-fondo" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right nav-links">
+              <li><a class="link" href="#"><b></b></a></li>
+              <li><a class="link" href="#"><b></b></a></li>
+              <li><a class="link" href="#"><b></b></a></li>
+            </ul>   
+        </div><!-- /.navbar-collapse -->
+
+      </div><!-- /.container-fluid -->
+  </nav>                                                                                                                                                                                                                                                                                                                                                                           
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+
+  				<div class="form-group">
+  					<label for="dispositivo">Dispositivo</label>
+  						<select class="form-control" id="dispositivo">
+    						<option>Dispositivo 1</option>
+    						<option>Dispositivo 2</option>
+  						</select>
+				</div>
+
+				<div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              <form class="form-horizontal" action="" method="post">
+                  <div class='input-group date' id='divMiCalendario'>
+                      <input type='text' id="txtFecha" class="form-control"  readonly/>
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </form>
+          </div>
+        </div>
+			</div>
+
+			<div class="img-responsive col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+				<div class="row">
+					<div id="map">
+					 <canvas id="dibujo"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    
+	<!-- Compiled and minified Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+   <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+   <script src="assets/js/bootstrap-datetimepicker.es.js"></script>
+
+   <script type="text/javascript">
+     $('#divMiCalendario').datetimepicker({
+          format: 'YYYY-MM-DD HH:mm'       
+      });
+      $('#divMiCalendario').data("DateTimePicker").show();
+   </script>
+
+    <script type="text/javascript" href="assets/js/main.js"></script>
+    <script type="text/javascript" href="assets/js/route.js"></script>
+
+</body>
+</html>
