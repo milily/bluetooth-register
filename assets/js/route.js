@@ -66,7 +66,7 @@ for (var i = 0; i <= n; i++) {
   contexto.arc(s.x, s.y, 3, 0, 2 * Math.PI);
   contexto.stroke();
 }*/
-
+/*
 var CANVAS_WIDTH = window.innerWidth;
 var CANVAS_HEIGHT = window.innerHeight;
 
@@ -127,4 +127,22 @@ function loop() {
   context.moveTo(dot.x, dot.y);
   context.arc(dot.x, dot.y, 3, 0, Math.PI*2, true);
   context.fill();
+}*/
+
+
+
+var d = document.getElementById("dibujo");
+var lienzo = d.getContext("2d");
+
+
+dibujarLinea("red", 10, 300, 220, 10);
+
+function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal){
+  lienzo.beginPath();
+  lienzo.strokeStyle = color;
+  lienzo.moveTo(xinicial, yinicial);
+  lienzo.lineTo(xfinal, yfinal);
+  lienzo.stroke();
+  lienzo.closePath();
 }
+
