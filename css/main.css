@@ -38,12 +38,10 @@
 @media only screen and (max-width: 768px) {
   .demo-1 .main-title {
     font-size: 3em; } }
+#paper {
+  background-image: url("../img/plano-off-02-01.jpg");
+  background-size: 100% 70%;
+  background-position: center;
+  background-repeat: no-repeat; }
 
 /*# sourceMappingURL=main.css.map */
-
-
-#paper{
-  background-image: url(../img/planta2.jpg);
-  background-size: cover;
-  background-position: center;
-}
