@@ -51,77 +51,7 @@ for(var i =0; i < registro; i++){
 draw();
 });
 
-/*
-function drawDos() { 
-    con2.beginPath();
-
-var registro = datosDispositivos.movil_2.origen1.registros.length;
-console.log("origenx2"+origenx2);
-console.log("origeny2"+origeny2);
-
-for(var i =0; i < registro; i++){
-
-    var cooX2 = parseInt(origenx2) + parseInt(datosDispositivos.movil_2.origen1.registros[i].coordenadaX);
-    var cooY2 = parseInt(origeny2) + parseInt(datosDispositivos.movil_2.origen1.registros[i].coordenadaY);
-    console.log("coox"+cooX2);
-
-    con2.arc(cooX2, cooY2, rad2, 0, 2 * Math.PI,false);//Datos de coordenadas dinamicos llamando a las coordenadas del data
-}
-
- rad2++;
- if(rad2 == 10) {
-     rad2 = 1;
- } else {
-  con2.clearRect(0,0,canvas.width,canvas.height);
- }
-  
- con2.lineWidth = 1;
- con2.strokeStyle = '#99AE04';
- con2.stroke();
- setTimeout(drawDos,250);
-}
-drawDos();
-})*/
-
-/*
-function draw2() {  
- con.beginPath();
- con.arc(490, 200, rad, 0, 2 * Math.PI,false);
- con.arc(390, 140, rad, 0, 2 * Math.PI,false);
- con.arc(340, 110, rad, 0, 2 * Math.PI,false);
- con.arc(300, 70, rad, 0, 2 * Math.PI,false);
- rad++;
- if(rad == 10) {
-     rad = 1;
- } else {
-  con.clearRect(0,0,canvas.width,canvas.height);
- } 
- 
- con.lineWidth = 1;
- con.strokeStyle = 'red';
- con.stroke();
- setTimeout(draw2,250);
-}
-
-
-function mostrarRoute(){
-  var valoruno = []
-	var selector = document.getElementById("dispositivo").value;
-	if(selector == valoruno){
-		draw();
-	}else{
-		draw2();
-	}
-}
-mostrarRoute();
-
-})
-/*
-var arrX = []
-datosDispositivos.forEach(function(e){
-  /*e.registros[0 transformar esto en '37' +/- punto origen]*/
-  /*arrX.push(e.registros[0])
-})
+/
 
 arrX.forEach(function(e){
 
