@@ -149,7 +149,7 @@ function loop() {
   context.arc(dot.x, dot.y, 3, 0, Math.PI*2, true);
   context.fill();
 }*/
-
+/*
 document.getElementById('next').addEventListener("click",function(){
 var valoruno = $("#uno").val();
 var valordos = $("#dos").val();
@@ -189,7 +189,7 @@ function draw2() {
  con.lineWidth = 1;
  con.strokeStyle = 'red';
  con.stroke();
- setTimeout(draw2,350);
+ setTimeout(draw2,100);
 }
 
 
@@ -200,9 +200,10 @@ function mostrarRoute(){
 	}else{
 		draw2();
 	}
+ 
 }
 mostrarRoute();
 
-})
+})*/
 
 
