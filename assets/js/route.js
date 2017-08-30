@@ -151,25 +151,28 @@ function loop() {
 }*/
 
 document.getElementById('next').addEventListener("click",function(){
-var valoruno = $("#uno").val();
-var valordos = $("#dos").val();
 
   var canvas = document.getElementById('dibujo');
   var con = canvas.getContext('2d'),
    rad = 0,
    linW = 0;
  
- function draw() {  con.beginPath();
- con.arc(350, 150, rad, 0, 2 * Math.PI,false);
- con.arc(200, 200, rad, 0, 2 * Math.PI,false);
- con.arc(180, 130, rad, 0, 2 * Math.PI,false);
+ function draw() { 
+    con.beginPath();
+    con.arc(350, 150, rad, 0, 2 * Math.PI,false);
+    con.arc(200, 200, rad, 0, 2 * Math.PI,false);
+    con.arc(180, 130, rad, 0, 2 * Math.PI,false);
+
  
  rad++;
  if(rad == 10) {
      rad = 1;
- }  con.clearRect(0,0,canvas.width,canvas.height);
+ } else {
+  con.clearRect(0,0,canvas.width,canvas.height);
+ }
+  
  con.lineWidth = 1;
- con.strokeStyle = ' #99AE04';
+ con.strokeStyle = '#99AE04';
  con.stroke();
  setTimeout(draw,250);
 }
@@ -180,16 +183,18 @@ function draw2() {
  con.arc(490, 200, rad, 0, 2 * Math.PI,false);
  con.arc(390, 140, rad, 0, 2 * Math.PI,false);
  con.arc(340, 110, rad, 0, 2 * Math.PI,false);
- con.arc(300, 70, rad, 0, 2 * Math.PI,false);  
+ con.arc(300, 70, rad, 0, 2 * Math.PI,false);
  rad++;
  if(rad == 10) {
      rad = 1;
- }
+ } else {
+  con.clearRect(0,0,canvas.width,canvas.height);
+ } 
  
  con.lineWidth = 1;
  con.strokeStyle = 'red';
  con.stroke();
- setTimeout(draw2,350);
+ setTimeout(draw2,250);
 }
 
 
