@@ -159,15 +159,21 @@ var valordos = $("#dos").val();
    rad = 0,
    linW = 0;
  
- function draw() {  con.beginPath();
- con.arc(350, 150, rad, 0, 2 * Math.PI,false);
- con.arc(200, 200, rad, 0, 2 * Math.PI,false);
- con.arc(180, 130, rad, 0, 2 * Math.PI,false);
+ function draw() {  
+con.beginPath();
+ con.arc(480, 180, rad, 0, 2 * Math.PI,false);
+ con.arc(450, 190, rad, 0, 2 * Math.PI,false);
+ con.arc(420, 130, rad, 0, 2 * Math.PI,false);
+ con.arc(360, 130, rad, 0, 2 * Math.PI,false);
+ con.arc(330, 100, rad, 0, 2 * Math.PI,false);
+ con.arc(400, 70, rad, 0, 2 * Math.PI,false);
  
  rad++;
  if(rad == 10) {
      rad = 1;
- }  con.clearRect(0,0,canvas.width,canvas.height);
+ }  
+
+ con.clearRect(0,0,canvas.width,canvas.height);
  con.lineWidth = 1;
  con.strokeStyle = ' #99AE04';
  con.stroke();
@@ -180,7 +186,6 @@ function draw2() {
  con.arc(490, 200, rad, 0, 2 * Math.PI,false);
  con.arc(390, 140, rad, 0, 2 * Math.PI,false);
  con.arc(340, 110, rad, 0, 2 * Math.PI,false);
- con.arc(300, 70, rad, 0, 2 * Math.PI,false);  
  rad++;
  if(rad == 10) {
      rad = 1;
@@ -204,5 +209,5 @@ function mostrarRoute(){
 mostrarRoute();
 
 })
-
+//-------------------------
 
