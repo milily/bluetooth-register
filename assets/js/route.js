@@ -173,7 +173,7 @@ var valordos = $("#dos").val();
  con.stroke();
  setTimeout(draw,250);
 }
-draw();
+
 
 function draw2() {  
  con.beginPath();
@@ -189,10 +189,19 @@ function draw2() {
  con.lineWidth = 1;
  con.strokeStyle = 'red';
  con.stroke();
- setTimeout(draw2,250);
+ setTimeout(draw2,350);
 }
-draw2();
 
+
+function mostrarRoute(){
+	var selector = document.getElementById("dispositivo").value;
+	if(selector == valoruno){
+		draw();
+	}else{
+		draw2();
+	}
+}
+mostrarRoute();
 
 })
 
